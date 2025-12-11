@@ -1,0 +1,37 @@
+```python
+import tkinter as tk
+from tkinter import ttk
+import requests
+import matplotlib.pyplot as plt
+class TradingSoftware:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Trading Software")
+        self.sign_up_frame = tk.Frame(self.root)
+        self.sign_up_frame.pack()
+        self.email_label = tk.Label(self.sign_up_frame, text="Email:")
+        self.email_label.pack()
+        self.email_entry = tk.Entry(self.sign_up_frame)
+        self.email_entry.pack()
+        self.password_label = tk.Label(self.sign_up_frame, text="Password:")
+        self.password_label.pack()
+        self.password_entry = tk.Entry(self.sign_up_frame, show="*")
+        self.password_entry.pack()
+        self.sign_up_button = tk.Button(self.sign_up_frame, text="Sign Up", command=self.sign_up)
+        self.sign_up_button.pack()
+        self.login_button = tk.Button(self.sign_up_frame, text="Login", command=self.login)
+        self.login_button.pack()
+    def sign_up(self):
+        email = self.email_entry.get()
+        password = self.password_entry.get()
+        # سائن اپ کا کوڈ یہاں لکھیں گے
+        self.sign_up_frame.destroy()
+        self.login_frame = tk.Frame(self.root)
+        self.login_frame.pack()
+        self.login_label = tk.Label(self.login_frame, text="Login Successful!")
+        self.login_label.pack()
+        self.trading_frame = tk.Frame(self.root)
+        self.trading_frame.pack()
+        self.market_label = tk.Label(self.trading_frame, text="Market:")
+        self.market_label.pack()
+       
